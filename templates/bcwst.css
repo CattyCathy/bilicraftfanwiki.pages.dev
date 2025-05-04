@@ -120,7 +120,7 @@ main{
 
 
 
-  @container (min-width: 1500px){
+  @media (max-width: 768px){
     #toc-container{
         transform: translateX(120%);
     }
