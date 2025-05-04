@@ -202,3 +202,32 @@ main{
     padding: 8px;
     padding-bottom: 16px;
 }
+
+.editor::before{
+    content: "编辑:";
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.editor{
+    min-height: 64px;
+    background-color: #FFFFFFAA;
+    padding: 8px;
+    padding-bottom: 0px;
+    border-radius: 8px;
+}
+
+.profile::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    margin-right: 8px;
+    position: relative; 
+    top: 8px;          
+  }
+
+.profile{
+    color: black;
+}
