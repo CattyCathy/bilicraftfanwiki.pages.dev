@@ -152,7 +152,7 @@ main{
 .do::before{
     margin: 4px;
     display: block;
-    content:"好";
+    content:"好！";
     font-size: 24px;
     font-weight: 1000;
     color:#005500FF;
@@ -170,7 +170,7 @@ main{
 .dont::before{
     margin: 4px;
     display: block;
-    content:"不好";
+    content:"不好！";
     font-size: 24px;
     font-weight: 1000;
     color:#550000FF;
@@ -188,7 +188,7 @@ main{
 .attention::before{
     margin: 4px;
     display: block;
-    content:"注意";
+    content:"注意！";
     font-size: 24px;
     font-weight: 1000;
     color:#777700FF;
