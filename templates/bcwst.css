@@ -220,8 +220,8 @@ main{
 .profile::before {
     content: "";
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 2em;
+    height: 2em;
     background-size: contain;
     margin-right: 8px;
     position: relative; 
