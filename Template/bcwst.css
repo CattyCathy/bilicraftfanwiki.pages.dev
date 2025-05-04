@@ -1,0 +1,204 @@
+/*BiliCraft Wiki Style - Topic*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    height: 64px;
+    border-radius: 6px;
+}
+
+header > a{
+    margin: 0px;
+    text-decoration: none;
+}
+
+header > a > h1{
+    margin: auto;
+    margin-left: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0px;
+    background-image: linear-gradient(
+        90deg,
+        rgb(119 0 255 / 39%),
+        rgb(0 212 255 / 39%)
+    ); 
+}
+
+footer{
+    background-color: #FFFFFFBB;
+    margin: 8px;
+    border-radius: 8px;
+    padding: 16px;
+    margin-right: calc(240px + 48px);
+    transition-property: margin-right;
+    transition-duration: 0.3s;
+}
+
+iframe{
+    margin: 0px;
+    border-color: transparent;
+}
+
+main{
+    margin-right: calc(240px + 40px);
+    transition-property: margin-right;
+    transition-duration: 0.3s;
+    height: auto;
+}
+
+/*Content Container*/
+.contctn{
+    background-color: #FFFFFFAA;
+    min-width: 50%;
+    min-height: 20%;
+    margin:32px 18px;
+    border-radius: 16px;
+    padding:  16px;
+}
+
+/*Topic Title*/
+.tpct{
+    font-size: xx-large;
+    margin-left: 8px;
+}
+
+/*Main Article div*/
+.madv{
+    margin: auto;
+}
+
+.madv > p{
+    font-size: large;
+}
+
+#toc-container {
+    width: 240px;
+    right: 8px;
+    top: 64px;
+    bottom: 16px;
+    position: fixed;
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-y: auto;
+    transform: translateX(0%);
+    transition: transform 0.3s;
+  }
+  
+ .toc-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .toc-item:hover {
+    background: #f0f0f0;
+  }
+  
+  .toc-item.active {
+    background: #2196F3;
+    color: white;
+  }
+  
+  .toc-item.h2 { margin-left: 20px; }
+  .toc-item.h3 { margin-left: 40px; }
+  .toc-item.h4 { margin-left: 60px; }
+  .toc-item.h5 { margin-left: 80px; }
+  .toc-item.h6 { margin-left: 100px; }
+
+
+
+  @media (max-width: 768px){
+    #toc-container{
+        transform: translateX(120%);
+    }
+
+    main{
+        margin-right: calc(0px);
+    }
+    footer{
+        margin-right: 8px;
+    }
+  }
+
+  /*img div*/
+.imgdv{
+    max-width: calc(100vh);
+    padding:  16px 16px 16px 16px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.imgdv > img{
+    border-radius: 8px;
+    right: 0;
+    margin: auto;
+    size: auto;
+    width: 100%;
+}
+
+.do::before{
+    margin: 4px;
+    display: block;
+    content:"好";
+    font-size: 24px;
+    font-weight: 1000;
+    color:#005500FF;
+}
+
+.do{
+    margin: 4px;
+    background-color: #77FF7777;
+    border-radius: 8px;
+    min-height: 64px;
+    padding: 8px;
+    padding-bottom: 16px;
+}
+
+.dont::before{
+    margin: 4px;
+    display: block;
+    content:"不好";
+    font-size: 24px;
+    font-weight: 1000;
+    color:#550000FF;
+}
+
+.dont{
+    margin: 4px;
+    background-color: #FF777777;
+    border-radius: 8px;
+    min-height: 64px;
+    padding: 8px;
+    padding-bottom: 16px;
+}
+
+.attention::before{
+    margin: 4px;
+    display: block;
+    content:"注意";
+    font-size: 24px;
+    font-weight: 1000;
+    color:#777700FF;
+}
+
+.attention{
+    margin: 4px;
+    background-color: #FFFF7777;
+    border-radius: 8px;
+    min-height: 64px;
+    padding: 8px;
+    padding-bottom: 16px;
+}
