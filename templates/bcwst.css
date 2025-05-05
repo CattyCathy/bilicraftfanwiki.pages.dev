@@ -8,6 +8,7 @@ header{
     background-color: white;
     height: 64px;
     border-radius: 6px;
+    z-index: 1145;
 }
 
 header > a{
@@ -226,7 +227,7 @@ main{
     background-size: contain;
     margin-right: 8px;
     position: relative; 
-    top: 8px;          
+    top: 8px;       
   }
 
 .profile{
@@ -241,7 +242,7 @@ main{
     background-size: contain;
     margin-right: 2px;
     position: relative; 
-    top: 8px;          
+    top: 8px;      
   }
 
 .gameitem{
