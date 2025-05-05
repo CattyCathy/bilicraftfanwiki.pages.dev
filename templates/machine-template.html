@@ -38,13 +38,21 @@
                         <p>机器照片</p>
                     </div>
                 </div>
+                <h4 class="is-open">是否公开</h4>
+                <p id="is-open">是/否</p>
                 <h4>建造者</h4>
                 <ul>
                     <li><a class="profile">建造者1</a></li>
                     <li><a class="profile">建造者2</a></li>
                 </ul>
+
+                <h4 class="owner">所有者</h4>
+                <ul>
+                    <li><a class="profile">建造者1</a></li>
+                    <li><a class="faction">公会1</a></li>
+                </ul>
                 <h4>产物和每小时产量</h4>
-                <table>
+                <table class="machine-product">
                     <thead>
                         <tr>
                             <th>产物</th>
@@ -60,9 +68,9 @@
                         <!--表格可修改部分到这里结束-->
                     </tbody>
                 </table>
-                <h4>是否抗卸载</h4>
+                <h4 class="is-dump-safe">是否抗卸载</h4>
                 <p>是/否</p>
-                <h4>维护人员</h4>
+                <h4 class="maintainer">维护人员</h4>
                 <ul>
                     <li><a class="profile">维护人员1</a></li>
                     <li><a class="profile">维护人员2</a></li>
@@ -109,5 +117,6 @@
     <script src="/global/headerfooter.js" defer></script>
     <script src="/templates/auto-link-profile.js" defer></script>
     <script src="/templates/auto-link-game-item.js" defer></script>
+    <script src="/templates/auto-link-faction copy.js" defer></script>
 </body>
 </html>
