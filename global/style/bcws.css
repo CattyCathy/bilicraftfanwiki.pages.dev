@@ -24,10 +24,7 @@ main{
 }
 
 footer{
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    right: 8px;
+    margin-top: auto;
     background-color: #FFFFFFBB;
     margin-bottom: 0;
     border-radius: 8px;

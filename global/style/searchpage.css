@@ -19,6 +19,7 @@
 }
 
 .pagination-zone{
+    margin-top: auto;
     background-color: aliceblue;
     margin: 12px;
     padding: 20px;
