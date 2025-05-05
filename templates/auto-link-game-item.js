@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Processing:', rawText, '→', path);
   
         // 设置链接
-        link.href = `/gameitem/${path}/index.html`;
+        link.href = `https://zh.minecraft.wiki/w/${path}`;
         
         // 生成资源路径
         const iconUrl = `/gameitem/${path}/image.png`;
-        const selector = `a[href="/gameitem/${path}/index.html"]::before`;
+        const selector = `a[href="https://zh.minecraft.wiki/w/${path}"]::before`;
   
         // 插入CSS规则
         if (!existingRules.has(selector)) {
