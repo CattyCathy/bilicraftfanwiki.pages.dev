@@ -1,7 +1,4 @@
 # 每行一个路径，支持注释
 # 保持这几个文章在最上面
 articles/main-introduction
-articles/main-introduction3
-articles/main-introduction2
-articles/main-introduction1
 # 其他文章最新的放最上面
