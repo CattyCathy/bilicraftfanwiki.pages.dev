@@ -18,11 +18,6 @@ header > *{
     line-height: 64px;
 }
 
-footer{
-    display: flex;
-    background-color: white;
-}
-
 footer > *{
     margin-right: 8px;
 }
