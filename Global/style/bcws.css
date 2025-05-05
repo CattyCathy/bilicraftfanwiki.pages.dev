@@ -1,7 +1,24 @@
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: white;
     height: 60px;
     border-radius: 6px;
+    z-index: 1145;
+}
+
+header > a{
+    margin: 0px;
+    text-decoration: none;
+}
+
+header > a > h1{
+    margin: auto;
+    margin-left: 8px;
+    color: black;
+    text-decoration: none;
 }
 
 body{
