@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <title>BiliCraft Fan Wiki - Topic Name</title>
     <link rel="stylesheet" href="/global/style/bcws.css"/>
-    <link rel="stylesheet" href="/templates/bcwst.css"/>
+    <link rel="stylesheet" href="/global/style/bcwst.css"/>
 </head>
 
 <body>
@@ -26,27 +26,44 @@
                 <!--编辑者信息-->
                 <div class="editor"><a class="profile">LinTsingShi</a></div>
                 <!--示例-->
-                <p>正文</p>
-                <!--标题只能用h3 h4 h5 h6-->
-                <h3>小标题1</h3>
-                <p>小标题内容</p>
-                <div class="imgdv">
-                    <img src="/introduction.png"
-                    alt="图片描述">
-                    <div>
-                        <p>图片的说明文字</p>
-                    </div>
-                </div>
-                <h4>下一级标题</h4>
-                <div class="do">
-                    应该做这些
-                </div>
-                <div class="dont">
-                    避免做这些
-                </div>
-                <div class="attention">
-                    仔细考虑下
-                </div>
+                <p>很高兴你能使用我们的Wiki!</p>
+
+                <h3>简介</h3>
+                <p>本Wiki始建于2025年4月28日，目的是作为官方Wiki的扩充。为了给玩家更好的体验和更准确的信息，我们建造了本Wiki。<del>LinTsingShi：其实是为了把“不好”贴满整个网站。</del></p>
+                <p>本Wiki的有部分内容是从官方Wiki修改的，尤其是服务器规则和插件的基本信息。新手教程的编写采用了和官方Wiki完全不同的方案，从一个新玩家的视角来编写，能帮助玩家更好地融入BiliCraft。</p>
+                
+                <p>我们使用了静态站点的方案，将文件托管在GitHub上，网站托管给CloudFlare。在加载媒体文件的时候会比较慢，还请见谅。</p>
+                
+                <h3>建造者</h3>
+                <ul>
+                    <li><a class="profile">LinTsingShi</a></li>
+                </ul>
+
+                <h3>心得</h3>
+                <p>在设计的时候，我们采用了一些控件的概念来写class。就比如展示头像的控件，它是一个运用了伪元素的a标签。这样的设计极大方便了编写，可以让编辑者不用记住繁杂的结构<del>imgdv是个例外，不过你可以复制它</del>。网页中利用了很多JS，比如全局的页眉页脚、侧边自动生成的目录、搜索功能之类的。能在静态页面实现搜索有点超出了我的预期了，虽然我需要把每个新添加的文章都注册到配置表里。（没错，搜索也是静态的）</p>
+
+                <h3>我们是如何编辑的？</h3>
+                <p>好奇我们是如何编辑网站的吗？</p>
+                <h4>网站的样式</h4>
+                <p>对于网站的样式，我们给整个网站设计了一个统一的样式，并且给页眉和页脚的内容也单独设计了样式，放置在 /global/style/ 文件夹里。</p>
+                <p>在添加新类型的页面的时候，我们会根据其中需要用到的新控件设计合适的方案，为这个新类型的页面设置一个单独的css。</p>
+                <h4>页面的添加</h4>
+                <p>在添加页面的时候，我们会根据其主题放到对应的类型下的 articles/ 文件夹，有时候甚至是articles之下的文件夹。为了让这个文件能被搜索到，我们会在一个txt文件内记录这个文件夹的index.html文件对于这个文本文件的相对路径。</p>
+                <h4>增加主题</h4>
+                <p>在增加主题的时候，我们会先考虑这个主题是否是需要的，如果确实需要，我们会决定是否要为这个主题单独设计一个页面模板，放在 /templates/ 文件夹下。现有的模板都是从基础模板上修改而来的，它们都使用同一套控件系统。</p>
+                <p>在增加完模板后，我们或许会在 /index.html 复制一个其他主题的标签，然后在对应的css文件给它配置样式，比如背景图像。接下来我们就可以去 /topic/ 或者其他路径来创建这个主题的根目录了。</p>
+                <p>我们会复制其他文件下的article-list.txt（文章记录文件，用于帮助搜索），index.html（通常是搜索页）和menugen.js（用来搜索网页）。每个搜索页面下都有一个单独的menugen，这是为了单独配置对应的记录文件，并且如果必要的话，可以针对主题单独修改，让搜索方式多样化（比如机器相关的文章可以增加产物筛选）<del>这个还没做，有空再说</del>。</p>
+                <h3>给用户添加头像</h3>
+                <p>用户的头像保存在 /profile/用户名/avatar.png 内，在profile类型的a标签内输入用户名，会自动尝试在标签前方调用一个用户头像。未上传头像的用户不会有这个头像，仅仅保留放置头像的控件。</p>
+                <h3>添加游戏物品图标</h3>
+                <p>原版游戏物品的图标从<a href="https://zh.minecraft.wiki">https://zh.minecraft.wiki</a>获得，gameitem类型的a标签被点击时会自动尝试导航到这个站点的对应物品栏目下。</p>
+                <p>添加游戏物品图标的过程也是类似的，只不过放置的路径改为了 /gameitem/物品名称/image.png 。</p>
+
+                <h3>项目地址</h3>
+                <a href="https://github.com/CattyCathy/bilicraftfanwiki.pages.dev">https://github.com/CattyCathy/bilicraftfanwiki.pages.dev</a>
+                <p>如果你喜欢的话点个Star吧（</p>
+                <p>最后，祝你玩得愉快！</p>
+                <p style="font-size: 0.4em;">para</p>
             <!--正文到这里结束-->
             </div>
         </div>
