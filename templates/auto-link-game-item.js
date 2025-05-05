@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function setProfile() {
       function formatPath(text) {
         // 建议至少包含以下处理（按需调整）
-        return text
-                  .replace(/\s+/g, '-')
-                  .replace(/[^\w-]/g, '');
+        return text;
       }
   
       const styleSheet = document.createElement('style');
@@ -24,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = `/gameitem/${path}/index.html`;
         
         // 生成资源路径
-        const iconUrl = `/gameitem/${path}/avatar.png`;
+        const iconUrl = `/gameitem/${path}/image.png`;
         const selector = `a[href="/gameitem/${path}/index.html"]::before`;
   
         // 插入CSS规则
