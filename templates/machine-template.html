@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8"/>
+    <!--修改Topic Name为你的机器名称-->
     <title>BiliCraft Fan Wiki - Topic Name</title>
     <link rel="stylesheet" href="/templates/bcwst.css"/>
 </head>
@@ -18,25 +19,70 @@
         </div>
 
         <div class="contctn">
-            <!--主题标题-->
-            <h2 class="tpct">文章主题</h2>
+            <!--机器名称-->
+            <h2 class="tpct">机器名称</h2>
             <!--正文内容-->
             <div class="madv">
-                <!--编辑者信息-->
-                <div class="editor"><a class="profile">编辑者名称</a></div>
-                <!--描述你的机器-->
-                <p>机器描述</p>
+                <!--在这里填写编辑者信息，多个编辑者用中文逗号隔开-->
+                <div class="editor"><a class="profile">编辑者1</a>，<a class="profile">编辑者2</a></div>
+                <!--简单描述你的机器，这将作为搜索结果的概述-->
+                <p>机器简述</p>
                 <!--标题只能用h3 h4 h5 h6-->
-                <h3>机器位置</h3>
-                <p>小标题内容</p>
+                <!--详细描述你的机器-->
+                <h3>机器详细描述</h3>
+                <!--至少在这里放一张机器的图像，小于1mb更佳-->
                 <div class="imgdv">
-                    <img src="/introduction.png"
-                    alt="图片描述">
+                    <img src="/machine.png"
+                    alt="机器的图像，展示其外观">
                     <div>
-                        <p>图片的说明文字</p>
+                        <p>机器照片</p>
                     </div>
                 </div>
-                <h4>下一级标题</h4>
+                <h4>建造者</h4>
+                <ul>
+                    <li><a class="profile">建造者1</a></li>
+                    <li><a class="profile">建造者2</a></li>
+                </ul>
+                <h4>产物和每小时产量</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>产物</th>
+                            <th>产量（每小时）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--从这里开始修改表格-->
+                        <tr>
+                            <td><a class="gameitem">产物</a></td>
+                            <td>产量，例如：10k</td>
+                        </tr>
+                        <!--表格可修改部分到这里结束-->
+                    </tbody>
+                </table>
+                <h4>是否抗卸载</h4>
+                <p>是/否</p>
+                <h4>维护人员</h4>
+                <ul>
+                    <li><a class="profile">维护人员1</a></li>
+                    <li><a class="profile">维护人员2</a></li>
+                </ul>
+                <!--其他描述（如果有）-->
+                <p></p>
+
+                <!--机器的坐标，有助于让玩家确认是否是在寻找的机器-->
+                <h3>机器坐标</h3>
+                <p>世界: x: y: z:</p>
+
+                <!--详细描述从出生点到达该机器的方式-->
+                <h3>如何从工厂出生点前往？</h3>
+                <p></p>
+
+                <!--公开机器必写，记得写注意事项！-->
+                <h4>机器教程</h4>
+                <p></p>
+
+                <!--你可以在文章内使用这些标记，如果不想要，可以删掉-->
                 <div class="do">
                     应该做这些
                 </div>
@@ -46,6 +92,7 @@
                 <div class="attention">
                     仔细考虑下
                 </div>
+                
             <!--正文到这里结束-->
             </div>
         </div>
@@ -60,5 +107,7 @@
         <div class="components-loading">Loading footer...</div>
     </div>
     <script src="/global/headerfooter.js" defer></script>
+    <script src="/templates/auto-link-profile.js" defer></script>
+    <script src="/templates/auto-link-game-item.js" defer></script>
 </body>
 </html>

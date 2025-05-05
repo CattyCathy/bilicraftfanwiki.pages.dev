@@ -231,3 +231,18 @@ main{
 .profile{
     color: black;
 }
+
+.gameitem::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    margin-right: 8px;
+    position: relative; 
+    top: 8px;          
+  }
+
+.gameitem{
+    color: black;
+}
