@@ -1,87 +1,62 @@
-class CloudflareLinkGenerator {
-    constructor(config) {
-      this.config = {
-        basePath: '/articles', // 文章根目录
-        listType: 'html',      // Cloudflare返回的目录类型
-        pageSize: 10,
-        ...config
-      };
+class StaticLinkGenerator {
+    constructor() {
       this.state = {
-        articles: [],
+        paths: [],
+        items: [],
         filtered: [],
         currentPage: 0,
+        pageSize: 10,
         searchQuery: ''
       };
       this.init();
     }
   
     async init() {
-      document.querySelector('#search').addEventListener('input', e => 
-        this.handleSearch(e.target.value));
-      await this.loadArticles();
-      this.render();
-    }
-  
-    // 核心方法：加载文章列表
-    async loadArticles() {
       try {
-        // 获取目录列表
-        const dirs = await this.fetchDirectories();
+        // 加载路径配置
+        const txt = await fetch('article-list.txt').then(r => r.text());
+        this.state.paths = txt.split('\n')
+          .map(line => line.trim())
+          .filter(line => line && !line.startsWith('#'));
         
-        // 并行加载文章摘要
-        this.state.articles = await Promise.all(
-          dirs.map(async dir => ({
-            ...dir,
-            summary: await this.fetchSummary(dir.path)
+        // 加载文章内容
+        this.state.items = await Promise.all(
+          this.state.paths.map(async path => ({
+            path,
+            url: `${path}/index.html`,
+            title: await this.fetchTitle(path),
+            summary: await this.fetchSummary(path)
           }))
         );
         
-        this.state.filtered = [...this.state.articles];
+        this.state.filtered = [...this.state.items];
+        
+        // 初始化事件
+        document.getElementById('search').addEventListener('input', e => 
+          this.handleSearch(e.target.value));
+        
+        this.render();
       } catch (error) {
-        console.error('加载失败:', error);
-        this.showError();
+        console.error('初始化失败:', error);
+        document.getElementById('list').innerHTML = 
+          '<p style="color: red">内容加载失败，请检查配置文件路径</p>';
       }
     }
   
-    // 获取目录列表（Cloudflare特性）
-    async fetchDirectories() {
-      const url = this.config.basePath + '/';
-      const res = await fetch(url);
-      
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      
-      // 解析Cloudflare生成的目录列表
-      const html = await res.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      
-      return Array.from(doc.querySelectorAll('tr'))
-        .slice(1) // 跳过表头
-        .map(row => {
-          const [nameCell, dateCell, sizeCell] = row.querySelectorAll('td');
-          return {
-            name: nameCell?.textContent?.trim(),
-            path: nameCell.querySelector('a')?.href,
-            date: dateCell?.textContent?.trim(),
-            size: sizeCell?.textContent?.trim()
-          };
-        })
-        .filter(item => 
-          item.path && 
-          item.path.endsWith('/') && // 只保留目录
-          !item.path.includes('..') // 安全过滤
-        )
-        .map(item => ({
-          title: this.formatTitle(item.name),
-          url: item.path + 'index.html', // Cloudflare目录路径特性
-          path: item.path.replace(/\/$/, '') // 去除结尾斜杠
-        }));
+    async fetchTitle(path) {
+      try {
+        const res = await fetch(`${path}/index.html`);
+        const html = await res.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        return doc.querySelector('h2.tpct')?.textContent?.trim() || '未命名文章';
+      } catch {
+        return '标题加载失败';
+      }
     }
   
-    // 获取文章摘要
     async fetchSummary(path) {
       try {
-        const res = await fetch(path + '/index.html');
+        const res = await fetch(`${path}/index.html`);
         const html = await res.text();
         const doc = new DOMParser().parseFromString(html, 'text/html');
         return doc.querySelector('.madv p')?.textContent?.trim() || '暂无摘要';
@@ -90,76 +65,77 @@ class CloudflareLinkGenerator {
       }
     }
   
-    // 格式化标题
-    formatTitle(name) {
-      return name
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, c => c.toUpperCase());
-    }
-  
-    // 搜索处理
     handleSearch(query) {
       this.state.searchQuery = query.toLowerCase();
       this.state.currentPage = 0;
-      this.state.filtered = this.state.articles.filter(a =>
-        a.title.toLowerCase().includes(this.state.searchQuery) ||
-        a.summary.toLowerCase().includes(this.state.searchQuery)
+      this.state.filtered = this.state.items.filter(item =>
+        item.title.toLowerCase().includes(this.state.searchQuery) ||
+        item.summary.toLowerCase().includes(this.state.searchQuery)
       );
       this.render();
     }
   
-    // 渲染逻辑
     render() {
-      this.renderItems();
+      const start = this.state.currentPage * this.state.pageSize;
+      const items = this.state.filtered.slice(start, start + this.state.pageSize);
+      
+      // 生成列表HTML（修复XSS漏洞）
+      const list = document.getElementById('list');
+      list.innerHTML = '';
+      
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.style = "margin: 15px 0; padding: 10px;";
+        
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.textContent = item.title || '未命名文章';
+        link.style.fontSize = '1.2em';
+        
+        const summary = document.createElement('p');
+        summary.textContent = item.summary;
+        summary.style = "color: #666; margin-top: 5px";
+        
+        // const pathInfo = document.createElement('small');
+        // pathInfo.textContent = `路径：${item.path}`;
+        // pathInfo.style.color = '#999';
+        
+        div.appendChild(link);
+        div.appendChild(summary);
+        // div.appendChild(pathInfo);
+        list.appendChild(div);
+      });
+      
+      if (items.length === 0) {
+        list.innerHTML = '<p>没有找到相关内容</p>';
+      }
+  
       this.renderPagination();
     }
   
-    renderItems() {
-      const start = this.state.currentPage * this.config.pageSize;
-      const items = this.state.filtered.slice(start, start + this.config.pageSize);
-      
-      document.querySelector('#container').innerHTML = items.length ? 
-        items.map(item => `
-          <article class="card">
-            <h2><a href="${item.url}">${item.title}</a></h2>
-            <p class="summary">${item.summary}</p>
-            <div class="meta">
-              <span>${new URL(item.url).pathname.split('/')[2]}</span>
-            </div>
-          </article>
-        `).join('') : 
-        '<div class="empty">没有找到相关文章</div>';
-    }
-  
     renderPagination() {
-      const pageCount = Math.ceil(this.state.filtered.length / this.config.pageSize);
-      const pagination = document.querySelector('#pagination');
+      const pages = Math.ceil(this.state.filtered.length / this.state.pageSize);
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
       
-      pagination.innerHTML = Array.from({length: pageCount}, (_, i) => `
-        <button class="${i === this.state.currentPage ? 'active' : ''}" 
-                data-page="${i}">${i + 1}</button>
-      `).join('');
-      
-      pagination.onclick = e => {
-        if (e.target.tagName === 'BUTTON') {
-          this.state.currentPage = +e.target.dataset.page;
-          this.render();
+      for (let i = 0; i < pages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i + 1;
+        btn.style.margin = '0 3px';
+        btn.style.borderRadius = '4px';
+        btn.style.padding = '5px 10px';
+        if (i === this.state.currentPage) {
+          btn.style.background = '#009cff';
+          btn.style.color = 'white';
         }
-      };
-    }
-  
-    showError() {
-      document.querySelector('#container').innerHTML = `
-        <div class="error">
-          <p>内容加载失败，请刷新重试</p>
-          <button onclick="location.reload()">重新加载</button>
-        </div>
-      `;
+        btn.onclick = () => {
+          this.state.currentPage = i;
+          this.render();
+        };
+        pagination.appendChild(btn);
+      }
     }
   }
   
   // 初始化实例
-  new CloudflareLinkGenerator({
-    basePath: '/articles', // 根据实际路径调整
-    pageSize: 5
-  });
+  new StaticLinkGenerator();
