@@ -49,6 +49,7 @@ iframe{
 
 main{
     margin-right: calc(240px + 40px);
+    margin-top: 86px;
     transition-property: margin-right;
     transition-duration: 0.3s;
     height: auto;
@@ -246,3 +247,7 @@ main{
 .gameitem{
     color: black;
 }
+
+html {
+    scroll-padding-top: 80px;
+  }
