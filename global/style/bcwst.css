@@ -173,6 +173,24 @@ main{
     padding-bottom: 16px;
 }
 
+.doyouknow::before{
+    margin: 4px;
+    display: block;
+    content:"你知道吗？";
+    font-size: 24px;
+    font-weight: 1000;
+    color: #000077FF;
+}
+
+.doyouknow{
+    margin: 4px;
+    background-color: #77d8ff77;
+    border-radius: 8px;
+    min-height: 64px;
+    padding: 8px;
+    padding-bottom: 16px;
+}
+
 .editor::before{
     content: "编辑:";
     font-weight: 500;
