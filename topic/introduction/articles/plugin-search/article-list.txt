@@ -2,6 +2,9 @@
 # 保持这几个文章在最上面
 
 # 其他文章最新的放最上面
+plugins/skill
+plugins/oraxen
+plugins/lock-chest
 plugins/economy
 plugins/raffle
 plugins/infinite-block
