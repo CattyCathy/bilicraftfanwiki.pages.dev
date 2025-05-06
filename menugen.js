@@ -6,6 +6,7 @@ class StaticLinkGenerator {
       'topic/machine/article-list.txt',
       'topic/tutorial/article-list.txt',
       'topic/faction/article-list.txt',
+      'topic/gallery/article-list.txt',
     ];
     this.state = {
       paths: [],
