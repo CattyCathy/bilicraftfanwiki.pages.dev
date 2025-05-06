@@ -113,3 +113,11 @@
     background-position: 0px;
     background-size: cover;
 }
+
+#gallery{
+    position:static;
+    background-image: url(/gallery.png);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-size: cover;
+}
