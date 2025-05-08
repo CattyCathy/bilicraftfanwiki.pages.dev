@@ -104,6 +104,10 @@ main{
     }
   }
 
+img{
+    width: 100%;
+}
+
   /*img div*/
 .imgdv{
     max-width: calc(100vh);
