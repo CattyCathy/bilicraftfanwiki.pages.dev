@@ -22,7 +22,6 @@ main{
     transition-property: margin-right;
     transition-duration: 0.3s;
     height: auto;
-    font-size: medium;
 }
 
 /*Content Container*/
