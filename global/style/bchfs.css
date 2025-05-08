@@ -1,16 +1,36 @@
 /*BiliCraft header footer item style*/
 header > a{
     margin: 0px;
-    margin-left: 8px;
+    margin-left: 0px;
     text-decoration: none;
     color: black;
     font-weight: 600;
+    background-color: white;
+    padding: auto 8px;
+}
+
+.sitehomelink{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.headerlink{
+    padding-left: 16px;
+    padding-right: 16px;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+.headerlink:hover{
+    background-color: lightblue;
+    transition-duration: 0.5s;
+    transition-property: all;
 }
 
 header > a > h1{
     margin: auto;
     margin-top: -3px;
-    margin-left: 8px;
+    margin-left: 0px;
     color: black;
     text-decoration: none;
 }
