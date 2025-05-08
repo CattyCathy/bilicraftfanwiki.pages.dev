@@ -42,3 +42,8 @@ header > *{
 footer > *{
     margin-right: 8px;
 }
+
+footer > p > a{
+    color: black;
+    text-decoration-line: none;
+}
