@@ -22,7 +22,7 @@ main{
     transition-property: margin-right;
     transition-duration: 0.3s;
     height: auto;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 /*Content Container*/
@@ -91,7 +91,7 @@ main{
 
 
 
-  @media (max-width: 768px){
+@media (max-width: 768px){
     #toc-container{
         transform: translateX(120%);
     }
@@ -102,7 +102,9 @@ main{
     footer{
         margin-right: 8px;
     }
-  }
+}
+
+@media ()
 
 img{
     width: 100%;
