@@ -91,14 +91,13 @@ main{
 
 
 
-@media (max-width: 768px){
+  @media (orientation: portrait){
     #toc-container{
         transform: translateX(120%);
     }
 
     main{
         margin-right: calc(0px);
-        font-size: 12px;
     }
     footer{
         margin-right: 8px;
