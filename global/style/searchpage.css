@@ -109,6 +109,7 @@ iframe{
     .page-btn{
         height: 64px;
         width: 64px;
+        font-size: large;
     }
     .result-title{
         font-size: medium;
