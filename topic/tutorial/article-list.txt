@@ -1,6 +1,0 @@
-# 每行一个路径，支持注释
-# 保持这几个文章在最上面
-articles/new-player-tutorial
-articles/how-to-get-resources
-
-# 其他文章最新的放最上面

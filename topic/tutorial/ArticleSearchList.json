@@ -1,0 +1,14 @@
+{
+  "Results": [
+    {
+      "Path": "articles\\how-to-get-resources",
+      "Header": "如何获取资源",
+      "Content": "这篇文章将会从零开始帮助你获取资源。"
+    },
+    {
+      "Path": "articles\\new-player-tutorial",
+      "Header": "新手教学",
+      "Content": "BiliCraft 18th是一个基于MineCraft Java版1.20.4的插件生存服务器。"
+    }
+  ]
+}
