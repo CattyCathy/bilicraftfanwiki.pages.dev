@@ -105,6 +105,20 @@ iframe{
     background-color: #9999FFFF;
 }
 
+@media (orientation:portrait) {
+    .page-btn{
+        height: 64px;
+        width: 64px;
+    }
+    .result-title{
+        font-size: medium;
+    }
+    .result-summary
+    {
+        font-size: small;
+    }
+}
+
 .ellipsis-btn {
     background: none;
     border: none;
