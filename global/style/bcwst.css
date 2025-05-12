@@ -1,11 +1,9 @@
 /*BiliCraft Wiki Style - Topic*/
 @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Material Icons'),
-      local('MaterialIcons-Regular');
-  }
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src: url(/global/fonts/MaterialIcons-Regular.ttf);
+}
 
 footer{
     background-color: #FFFFFFBB;
@@ -135,33 +133,36 @@ img{
     margin: 16px;
     margin-bottom: 64px;
     border-radius: 8px;
-    height: 200px;
     width: 200px;
-
+    padding: 8px;
+    background-color: #EEEEFFFF;
 }
 
 .galleryimgpanel::after{
     display: block;
-    font-family: 'Material Icons';
-    content:"xx";
+    margin-left: auto;
+    content:"";
+    font-size: x-large;
+    height: 60px;
+    width: 60px;
+    background-color:rebeccapurple;
+}
+
+.galleryimgpanel::after{
+    margin-left: auto;
+    font-family: 'Material Symbols Outlined';
+    text-align: center;
+    vertical-align:middle;
+    content:"\f090";
+    font-size: x-large;
     height: 40px;
     width: 40px;
     background-color:#00000022;
 }
 
 .galleryimgpanel::after:hover{
-    background-color: #00000022;
-}
-
-.galleryimgpanel::after::after{
-    content: "";
-    background-color: #00000000;
-    height: 24px;
-    width: 24px;
-}
-
-.galleryimgpanel::after::after:hover{
-    background-color: #00000022;
+    background-color: #00000066;
+        font-size: xx-large;
 }
 
 .do::before{
