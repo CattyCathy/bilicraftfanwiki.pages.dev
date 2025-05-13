@@ -42,8 +42,8 @@
     },
     {
       "Path": "articles\\plugin-search\\plugins\\fishing",
-      "Header": "目录插件",
-      "Content": "目录插件是一个提供了主要功能的页面导航插件。签到、钓鱼、技能等插件都在这里提供了入口。"
+      "Header": "钓鱼插件",
+      "Content": "钓鱼插件是BiliCraft 18th的主要经济来源。玩家通过售卖鱼类来获取对应资金。"
     },
     {
       "Path": "articles\\plugin-search\\plugins\\flyblock",
@@ -57,13 +57,13 @@
     },
     {
       "Path": "articles\\plugin-search\\plugins\\hdb",
-      "Header": "HeaadDatabase插件",
-      "Content": "HeaadDatabase插件，也被叫做头颅商店，拥有一个庞大的头颅数据库。"
+      "Header": "HeadDatabase插件",
+      "Content": "HeadDatabase插件，也被叫做头颅商店，拥有一个庞大的头颅数据库。"
     },
     {
       "Path": "articles\\plugin-search\\plugins\\horse",
       "Header": "RPGhorse插件",
-      "Content": "图片的说明文字"
+      "Content": "请参考：官方Wiki的小马插件介绍"
     },
     {
       "Path": "articles\\plugin-search\\plugins\\infinite-block",
@@ -73,7 +73,7 @@
     {
       "Path": "articles\\plugin-search\\plugins\\item-frame-protect",
       "Header": "展示框保护插件",
-      "Content": "展示框保护插件可以让你的展示框免受伤害。"
+      "Content": "展示框保护插件可以让你的展示框免受伤害。同时，为悬浮的像素画提供了可行性。"
     },
     {
       "Path": "articles\\plugin-search\\plugins\\lift",
