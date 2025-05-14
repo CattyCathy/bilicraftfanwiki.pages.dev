@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>BiliCraft Fan Wiki - 控件一览</title>
+    <link rel="stylesheet" href="/global/style/bcws.css"/>
+    <link rel="stylesheet" href="/global/style/bcwst.css"/>
+</head>
+
+<body>
+    <header>
+        <script></script>
+    </header>
+
+    <main>
+        <div id="header-container">
+            <div class="components-loading">Loading header...</div>
+        </div>
+
+        <div class="contctn">
+            <!--主题标题-->
+            <h2 class="tpct">控件一览</h2>
+            <!--正文内容-->
+            <div class="madv">
+                <!--编辑者信息-->
+                <div class="editor"><a class="profile">LinTsingShi</a></div>
+                <!--示例-->
+                <p>BiliCraft Fan Wiki采用各种class来模拟控件，简化编辑者对文章的编辑。</p>
+                <!--标题只能用h3 h4 h5 h6-->
+                <h3>图片</h3>
+                <h4>fastimg</h4>
+                <p>目标标签:img</p>
+                <p>fastimg类的img会在文章被上传处理之前，经过缩略图生成程序的判断。当其宽度大于设定值，缩略图生成程序会将原图移动到文章index.html同级的imgsource文件夹，并在原先的位置生成一个webp图像，并将所有指向原先图像的img指向该webp。</p>
+                <p>也就是说，只要文章内有一个引用图像的img是fastimg类型，所有引用该图像的img都可能受到影响。</p>
+                <img class="fastimg" src="/introduction.png"
+                    alt="图片描述">
+            <!--正文到这里结束-->
+            </div>
+        </div>
+        <div id="toc-container">
+            <script src="/templates/autoindex.js"></script>
+            <div id="toc-title">目录</div>
+            <div id="toc"></div>
+          </div>
+    </main>
+
+    <div id="footer-container">
+        <div class="components-loading">Loading footer...</div>
+    </div>
+    <script src="/global/headerfooter.js" defer></script>
+    <script src="/templates/auto-link-profile.js" defer></script>
+    <script src="/templates/auto-link-game-item.js" defer></script>
+    <script src="/templates/auto-link-faction.js" defer></script>
+</body>
+</html>
