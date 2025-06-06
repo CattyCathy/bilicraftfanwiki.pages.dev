@@ -16,6 +16,11 @@
       "Content": "摄影师：biwenmo \r\n                    作品集：（无）\r\n                    地区：麦麦镇 \r\n                    出镜：（无）\r\n                    光影：（选填）"
     },
     {
+      "Path": "topic\\introduction\\articles\\main-city",
+      "Header": "主城",
+      "Content": "主城是整个BiliCraft 18th最主要的官方建筑。在这里，玩家可以进行抽奖、每日签到、玩家交易、购买无限方块等操作。"
+    },
+    {
       "Path": "topic\\introduction\\articles\\main-introduction",
       "Header": "Bilicraft简介",
       "Content": "BiliCraft，简称BC（也被玩家称为碧玺），于2012年1月18日由Bilibili创始人之一9bishi建立，是一个由Bilibili玩家建设和运营的公益性免费Minecraft服务器，需要正版验证和白名单审核。"
