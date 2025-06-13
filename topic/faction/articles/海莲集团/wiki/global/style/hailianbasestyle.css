@@ -1,0 +1,51 @@
+body{
+    background-color: #1f1f1f;
+}
+
+.topicdiv{
+    background-color: #3f3f3f;
+    position: relative;
+    height: 200px;
+    width: 80%;
+    margin: auto;
+    margin-top: 32px;
+    clip-path: polygon(80px 0, 100% 0, calc(100% - 80px) 100%, 0 100%);
+}
+.topicdiv-title{
+  color: #afafaf;
+  padding-left: 100px;
+  padding-top: 20px;
+  font-size: 64px;
+  font-weight: 500;
+}
+.topicdiv-description{
+  color: #afafaf;
+  padding-left: 100px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.decoration-circle{
+  position:absolute;
+  right: 0;
+  bottom: -36px;
+  width: 190px;
+  height: 190px;
+  transform: translate(20px, 30px);
+  border-radius: 50%;
+  border: 20px solid #5f5f5f;
+  background: transparent;
+}
+.decoration-text{
+  margin: auto;
+  content: "酒";
+  position: relative;
+  z-index: -1;
+  font-size: 130px;
+  font-weight: 900;
+  text-align: center;
+  color: #5f5f5f;
+  pointer-events: none;
+  user-select: none;
+}
